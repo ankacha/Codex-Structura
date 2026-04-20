@@ -265,7 +265,7 @@ Each standard is loaded from a referenced JSON file and represented as a node wi
         .attr("x2", (d) => x(d.applicability?.to ? new Date(d.applicability.to) : new Date()))
         .attr("y1", (d) => y(d.code) + y.bandwidth() / 2)
         .attr("y2", (d) => y(d.code) + y.bandwidth() / 2)
-        .attr("stroke", (d) => (d.code === selectedId ? "#1d4ed8" : "#94a3b8"))
+        .attr("stroke", (d) => (d.code === selectedId ? "#18bee7" : "#b2ffc9"))
         .attr("stroke-width", (d) => (d.code === selectedId ? 10 : 8))
         .attr("stroke-linecap", "round")
         .style("cursor", "pointer")
@@ -282,7 +282,7 @@ Each standard is loaded from a referenced JSON file and represented as a node wi
         .attr("cx", (d) => x(new Date(d.currentDocument.published)))
         .attr("cy", (d) => y(d.code) + y.bandwidth() / 2)
         .attr("r", (d) => (d.code === selectedId ? 7 : 5))
-        .attr("fill", (d) => (d.code === selectedId ? "#c2410c" : "#1d4ed8"))
+        .attr("fill", (d) => (d.code === selectedId ? "#05517c" : "#d8c51d"))
         .style("cursor", "pointer")
         .on("click", (event, d) => {
           selectedId = d.code;
