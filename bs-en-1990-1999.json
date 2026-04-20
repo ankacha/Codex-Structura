@@ -1,0 +1,530 @@
+{
+  "meta": {
+    "title": "BS EN 1990 to BS EN 1999 Eurocode series",
+    "generatedOn": "2026-04-20",
+    "description": "Real series metadata for the British adoption of Eurocodes 0 to 9, compiled from public BSI catalogue pages. Relationship links are limited to public catalogue evidence plus clearly marked architecture-level inferences where full internal reference clauses are not openly published.",
+    "referenceLimitations": "Public BSI catalogue pages do not expose the full clause-by-clause normative and informative references inside each standard. The references in this file are graph-ready relationship links based on public series scope, representative current documents, and explicitly marked architecture inference.",
+    "sources": [
+      {
+        "label": "BSI series and product pages",
+        "url": "https://landingpage.bsigroup.com/"
+      },
+      {
+        "label": "EN 1990 public scope summary",
+        "url": "https://standards.iteh.ai/catalog/standards/cen/be4b05f7-4c56-4e2e-a88d-56fce873fcbc/en-1990-2002"
+      }
+    ]
+  },
+  "standards": [
+    {
+      "code": "BS EN 1990",
+      "eurocode": "Eurocode 0",
+      "material": "Basis",
+      "standardType": "Basis of design",
+      "title": "Eurocode. Basis of structural and geotechnical design",
+      "committee": "B/525/1",
+      "seriesUrl": "https://landingpage.bsigroup.com/LandingPage/Undated?UPI=000000000030126876",
+      "seriesDoi": "https://doi.org/10.3403/30392671U",
+      "currentDocument": {
+        "code": "BS EN 1990:2023",
+        "title": "Eurocode. Basis of structural and geotechnical design",
+        "published": "2023-08-31",
+        "url": "https://knowledge.bsigroup.com/products/eurocode-basis-of-structural-and-geotechnical-design"
+      },
+      "applicability": {
+        "from": "2023-08-31",
+        "to": null,
+        "note": "Applicability start is currently aligned to the public publication date in this dataset unless a separate public applicability date is known."
+      },
+      "parts": [
+        "BS EN 1990:2023 Eurocode. Basis of structural and geotechnical design",
+        "BS EN 1990-1:2023+A1:2026 Eurocode. Basis of structural and geotechnical design - New structures",
+        "BS EN 1990-2:2026 Eurocode. Basis of structural and geotechnical design - Assessment of existing structures"
+      ],
+      "references": [
+        {
+          "target": "BS EN 1991",
+          "kind": "public-series-link",
+          "label": "Used in conjunction with",
+          "basis": "EN 1990 public scope summary states that EN 1990 is intended to be used in conjunction with EN 1991 to EN 1999.",
+          "sourceUrl": "https://standards.iteh.ai/catalog/standards/cen/be4b05f7-4c56-4e2e-a88d-56fce873fcbc/en-1990-2002"
+        },
+        {
+          "target": "BS EN 1992",
+          "kind": "public-series-link",
+          "label": "Used in conjunction with",
+          "basis": "EN 1990 public scope summary states that EN 1990 is intended to be used in conjunction with EN 1991 to EN 1999.",
+          "sourceUrl": "https://standards.iteh.ai/catalog/standards/cen/be4b05f7-4c56-4e2e-a88d-56fce873fcbc/en-1990-2002"
+        },
+        {
+          "target": "BS EN 1993",
+          "kind": "public-series-link",
+          "label": "Used in conjunction with",
+          "basis": "EN 1990 public scope summary states that EN 1990 is intended to be used in conjunction with EN 1991 to EN 1999.",
+          "sourceUrl": "https://standards.iteh.ai/catalog/standards/cen/be4b05f7-4c56-4e2e-a88d-56fce873fcbc/en-1990-2002"
+        },
+        {
+          "target": "BS EN 1994",
+          "kind": "public-series-link",
+          "label": "Used in conjunction with",
+          "basis": "EN 1990 public scope summary states that EN 1990 is intended to be used in conjunction with EN 1991 to EN 1999.",
+          "sourceUrl": "https://standards.iteh.ai/catalog/standards/cen/be4b05f7-4c56-4e2e-a88d-56fce873fcbc/en-1990-2002"
+        },
+        {
+          "target": "BS EN 1995",
+          "kind": "public-series-link",
+          "label": "Used in conjunction with",
+          "basis": "EN 1990 public scope summary states that EN 1990 is intended to be used in conjunction with EN 1991 to EN 1999.",
+          "sourceUrl": "https://standards.iteh.ai/catalog/standards/cen/be4b05f7-4c56-4e2e-a88d-56fce873fcbc/en-1990-2002"
+        },
+        {
+          "target": "BS EN 1996",
+          "kind": "public-series-link",
+          "label": "Used in conjunction with",
+          "basis": "EN 1990 public scope summary states that EN 1990 is intended to be used in conjunction with EN 1991 to EN 1999.",
+          "sourceUrl": "https://standards.iteh.ai/catalog/standards/cen/be4b05f7-4c56-4e2e-a88d-56fce873fcbc/en-1990-2002"
+        },
+        {
+          "target": "BS EN 1997",
+          "kind": "public-series-link",
+          "label": "Used in conjunction with",
+          "basis": "EN 1990 public scope summary states that EN 1990 is intended to be used in conjunction with EN 1991 to EN 1999.",
+          "sourceUrl": "https://standards.iteh.ai/catalog/standards/cen/be4b05f7-4c56-4e2e-a88d-56fce873fcbc/en-1990-2002"
+        },
+        {
+          "target": "BS EN 1998",
+          "kind": "public-series-link",
+          "label": "Used in conjunction with",
+          "basis": "EN 1990 public scope summary states that EN 1990 is intended to be used in conjunction with EN 1991 to EN 1999.",
+          "sourceUrl": "https://standards.iteh.ai/catalog/standards/cen/be4b05f7-4c56-4e2e-a88d-56fce873fcbc/en-1990-2002"
+        },
+        {
+          "target": "BS EN 1999",
+          "kind": "public-series-link",
+          "label": "Used in conjunction with",
+          "basis": "EN 1990 public scope summary states that EN 1990 is intended to be used in conjunction with EN 1991 to EN 1999.",
+          "sourceUrl": "https://standards.iteh.ai/catalog/standards/cen/be4b05f7-4c56-4e2e-a88d-56fce873fcbc/en-1990-2002"
+        }
+      ]
+    },
+    {
+      "code": "BS EN 1991",
+      "eurocode": "Eurocode 1",
+      "material": "Actions",
+      "standardType": "Actions on structures",
+      "title": "Eurocode 1. Actions on structures",
+      "committee": "B/525/1",
+      "seriesUrl": "https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS+EN+1991",
+      "seriesDoi": "https://doi.org/10.3403/BSEN1991",
+      "currentDocument": {
+        "code": "BS EN 1991-1-1:2025",
+        "title": "Eurocode 1. Actions on structures. Specific weight of materials, self-weight of construction works and imposed loads for buildings",
+        "published": "2025-02-28",
+        "url": "https://landingpage.bsigroup.com/LandingPage/Undated?UPI=000000000030197103"
+      },
+      "applicability": {
+        "from": "2025-02-28",
+        "to": null,
+        "note": "Applicability start is currently aligned to the public publication date in this dataset unless a separate public applicability date is known."
+      },
+      "parts": [
+        "Part 1-1 General actions. Densities, self-weight, imposed loads for buildings",
+        "Part 1-2 General actions. Actions on structures exposed to fire",
+        "Part 1-3 General actions. Snow loads",
+        "Part 1-4 General actions. Wind actions",
+        "Part 1-5 General actions. Thermal actions",
+        "Part 1-6 General actions. Actions during execution",
+        "Part 1-7 General actions. Accidental actions",
+        "Part 1-9 Atmospheric icing",
+        "Part 2 Traffic loads on bridges and other civil engineering works",
+        "Part 3 Actions induced by cranes and machinery",
+        "Part 4 Silos and tanks"
+      ],
+      "references": [
+        {
+          "target": "BS EN 1990",
+          "kind": "architecture-inference",
+          "label": "Design basis dependency",
+          "basis": "Eurocode 1 provides actions on structures and is treated in the Eurocode system as depending on the overall basis of design in BS EN 1990.",
+          "sourceUrl": "https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS+EN+1991"
+        }
+      ]
+    },
+    {
+      "code": "BS EN 1992",
+      "eurocode": "Eurocode 2",
+      "material": "Concrete",
+      "standardType": "Material design standard",
+      "title": "Eurocode 2. Design of concrete structures",
+      "committee": "B/525/2",
+      "seriesUrl": "https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS+EN+1992",
+      "seriesDoi": "https://doi.org/10.3403/BSEN1992",
+      "currentDocument": {
+        "code": "BS EN 1992-1-1:2023",
+        "title": "Eurocode 2. Design of concrete structures. General rules and rules for buildings, bridges and civil engineering structures",
+        "published": "2023-11-22",
+        "url": "https://landingpage.bsigroup.com/LandingPage/Undated?UPI=000000000030286962"
+      },
+      "applicability": {
+        "from": "2023-11-22",
+        "to": null,
+        "note": "Applicability start is currently aligned to the public publication date in this dataset unless a separate public applicability date is known."
+      },
+      "parts": [
+        "Part 1-1 General rules and rules for buildings, bridges and civil engineering structures",
+        "Part 1-2 Structural fire design",
+        "Part 2 Concrete bridges. Design and detailing rules",
+        "Part 3 Liquid retaining and containing structures",
+        "Part 4 Design of fastenings for use in concrete"
+      ],
+      "references": [
+        {
+          "target": "BS EN 1990",
+          "kind": "architecture-inference",
+          "label": "Design basis dependency",
+          "basis": "Eurocode 2 follows the common Eurocode design basis established in BS EN 1990.",
+          "sourceUrl": "https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS+EN+1992"
+        },
+        {
+          "target": "BS EN 1991",
+          "kind": "architecture-inference",
+          "label": "Actions dependency",
+          "basis": "Concrete design uses structural action models from Eurocode 1 as part of the wider Eurocode architecture.",
+          "sourceUrl": "https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS+EN+1992"
+        }
+      ]
+    },
+    {
+      "code": "BS EN 1993",
+      "eurocode": "Eurocode 3",
+      "material": "Steel",
+      "standardType": "Material design standard",
+      "title": "Eurocode 3. Design of steel structures",
+      "committee": "CB/203",
+      "seriesUrl": "https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS+EN+1993",
+      "seriesDoi": "https://doi.org/10.3403/BSEN1993",
+      "currentDocument": {
+        "code": "BS EN 1993-1-1:2022",
+        "title": "Eurocode 3. Design of steel structures. General rules and rules for buildings",
+        "published": "2023-08-25",
+        "url": "https://landingpage.bsigroup.com/LandingPage/Undated?UPI=000000000030283899"
+      },
+      "applicability": {
+        "from": "2023-08-25",
+        "to": null,
+        "note": "Applicability start is currently aligned to the public publication date in this dataset unless a separate public applicability date is known."
+      },
+      "parts": [
+        "Part 1-1 General rules and rules for buildings",
+        "Part 1-2 Structural fire design",
+        "Part 1-3 Cold-formed members and sheeting",
+        "Part 1-4 Stainless steel structures",
+        "Part 1-5 Plated structural elements",
+        "Part 1-6 Strength and stability of shell structures",
+        "Part 1-7 Plated structures subject to out of plane loading",
+        "Part 1-8 Design of joints",
+        "Part 1-9 Fatigue",
+        "Part 1-10 Material toughness and through-thickness properties",
+        "Part 1-11 Design of structures with tension components",
+        "Part 1-12 Extension up to steel grades S700",
+        "Part 1-13 Beams with large web openings",
+        "Part 1-14 Design assisted by finite element analysis",
+        "Part 2 Steel bridges",
+        "Part 3 Towers, masts and chimneys",
+        "Part 4-1 Silos",
+        "Part 4-2 Tanks",
+        "Part 4-3 Pipelines",
+        "Part 5 Piling",
+        "Part 6 Crane supporting structures"
+      ],
+      "references": [
+        {
+          "target": "BS EN 1990",
+          "kind": "architecture-inference",
+          "label": "Design basis dependency",
+          "basis": "Eurocode 3 follows the common Eurocode design basis established in BS EN 1990.",
+          "sourceUrl": "https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS+EN+1993"
+        },
+        {
+          "target": "BS EN 1991",
+          "kind": "architecture-inference",
+          "label": "Actions dependency",
+          "basis": "Steel design uses structural action models from Eurocode 1 as part of the wider Eurocode architecture.",
+          "sourceUrl": "https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS+EN+1993"
+        }
+      ]
+    },
+    {
+      "code": "BS EN 1994",
+      "eurocode": "Eurocode 4",
+      "material": "Composite",
+      "standardType": "Material design standard",
+      "title": "Eurocode 4. Design of composite steel and concrete structures",
+      "committee": "B/525/4",
+      "seriesUrl": "https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS+EN+1994",
+      "seriesDoi": "https://doi.org/10.3403/BSEN1994",
+      "currentDocument": {
+        "code": "BS EN 1994-2:2026",
+        "title": "Eurocode 4. Design of composite steel and concrete structures. Bridges",
+        "published": "2026-03-24",
+        "url": "https://landingpage.bsigroup.com/LandingPage/Undated?UPI=000000000030187356"
+      },
+      "applicability": {
+        "from": "2026-03-24",
+        "to": null,
+        "note": "Applicability start is currently aligned to the public publication date in this dataset unless a separate public applicability date is known."
+      },
+      "parts": [
+        "Part 1-1 General rules and rules for buildings",
+        "Part 1-2 Structural fire design",
+        "Part 2 General rules and rules for bridges"
+      ],
+      "references": [
+        {
+          "target": "BS EN 1990",
+          "kind": "architecture-inference",
+          "label": "Design basis dependency",
+          "basis": "Eurocode 4 follows the common Eurocode design basis established in BS EN 1990.",
+          "sourceUrl": "https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS+EN+1994"
+        },
+        {
+          "target": "BS EN 1991",
+          "kind": "architecture-inference",
+          "label": "Actions dependency",
+          "basis": "Composite design uses structural action models from Eurocode 1 as part of the wider Eurocode architecture.",
+          "sourceUrl": "https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS+EN+1994"
+        },
+        {
+          "target": "BS EN 1992",
+          "kind": "public-scope-link",
+          "label": "Concrete design overlap",
+          "basis": "The series title explicitly covers composite steel and concrete structures, creating a direct public scope relationship with Eurocode 2.",
+          "sourceUrl": "https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS+EN+1994"
+        },
+        {
+          "target": "BS EN 1993",
+          "kind": "public-scope-link",
+          "label": "Steel design overlap",
+          "basis": "The series title explicitly covers composite steel and concrete structures, creating a direct public scope relationship with Eurocode 3.",
+          "sourceUrl": "https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS+EN+1994"
+        }
+      ]
+    },
+    {
+      "code": "BS EN 1995",
+      "eurocode": "Eurocode 5",
+      "material": "Timber",
+      "standardType": "Material design standard",
+      "title": "Eurocode 5. Design of timber structures",
+      "committee": "B/525/5",
+      "seriesUrl": "https://landingpage.bsigroup.com/LandingPage/Undated?UPI=000000000030286965",
+      "seriesDoi": "https://doi.org/10.3403/30458279U",
+      "currentDocument": {
+        "code": "BS EN 1995-1-1:2025",
+        "title": "Eurocode 5. Design of timber structures. General rules and rules for buildings",
+        "published": "2025-11-20",
+        "url": "https://landingpage.bsigroup.com/LandingPage/Undated?UPI=000000000030286965"
+      },
+      "applicability": {
+        "from": "2025-11-20",
+        "to": null,
+        "note": "Applicability start is currently aligned to the public publication date in this dataset unless a separate public applicability date is known."
+      },
+      "parts": [
+        "Part 1-1 General rules and rules for buildings",
+        "Part 1-2 Structural fire design",
+        "Part 2 Bridges"
+      ],
+      "references": [
+        {
+          "target": "BS EN 1990",
+          "kind": "architecture-inference",
+          "label": "Design basis dependency",
+          "basis": "Eurocode 5 follows the common Eurocode design basis established in BS EN 1990.",
+          "sourceUrl": "https://landingpage.bsigroup.com/LandingPage/Undated?UPI=000000000030286965"
+        },
+        {
+          "target": "BS EN 1991",
+          "kind": "architecture-inference",
+          "label": "Actions dependency",
+          "basis": "Timber design uses structural action models from Eurocode 1 as part of the wider Eurocode architecture.",
+          "sourceUrl": "https://landingpage.bsigroup.com/LandingPage/Undated?UPI=000000000030286965"
+        }
+      ]
+    },
+    {
+      "code": "BS EN 1996",
+      "eurocode": "Eurocode 6",
+      "material": "Masonry",
+      "standardType": "Material design standard",
+      "title": "Eurocode 6. Design of masonry structures",
+      "committee": "B/525/6",
+      "seriesUrl": "https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS+EN+1996",
+      "seriesDoi": "https://doi.org/10.3403/BSEN1996",
+      "currentDocument": {
+        "code": "BS EN 1996-1-1:2022",
+        "title": "Eurocode 6. Design of masonry structures. General rules for reinforced and unreinforced masonry structures",
+        "published": "2023-08-30",
+        "url": "https://landingpage.bsigroup.com/LandingPage/Undated?UPI=000000000030146109"
+      },
+      "applicability": {
+        "from": "2023-08-30",
+        "to": null,
+        "note": "Applicability start is currently aligned to the public publication date in this dataset unless a separate public applicability date is known."
+      },
+      "parts": [
+        "Part 1-1 General rules for reinforced and unreinforced masonry structures",
+        "Part 1-2 Structural fire design",
+        "Part 2 Design considerations, selection of materials and execution of masonry",
+        "Part 3 Simplified calculation methods for unreinforced masonry structures"
+      ],
+      "references": [
+        {
+          "target": "BS EN 1990",
+          "kind": "architecture-inference",
+          "label": "Design basis dependency",
+          "basis": "Eurocode 6 follows the common Eurocode design basis established in BS EN 1990.",
+          "sourceUrl": "https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS+EN+1996"
+        },
+        {
+          "target": "BS EN 1991",
+          "kind": "architecture-inference",
+          "label": "Actions dependency",
+          "basis": "Masonry design uses structural action models from Eurocode 1 as part of the wider Eurocode architecture.",
+          "sourceUrl": "https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS+EN+1996"
+        }
+      ]
+    },
+    {
+      "code": "BS EN 1997",
+      "eurocode": "Eurocode 7",
+      "material": "Geotechnical",
+      "standardType": "Geotechnical design standard",
+      "title": "Eurocode 7. Geotechnical design",
+      "committee": "B/526",
+      "seriesUrl": "https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS+EN+1997",
+      "seriesDoi": "https://doi.org/10.3403/BSEN1997",
+      "currentDocument": {
+        "code": "BS EN 1997-1:2024",
+        "title": "Eurocode 7 - Geotechnical design. Part 1: General rules",
+        "published": "2024-09-30",
+        "url": "https://landingpage.bsigroup.com/LandingPage/Undated?UPI=000000000030272167"
+      },
+      "applicability": {
+        "from": "2024-09-30",
+        "to": null,
+        "note": "Applicability start is currently aligned to the public publication date in this dataset unless a separate public applicability date is known."
+      },
+      "parts": [
+        "Part 1 General rules",
+        "Part 2 Ground properties",
+        "Part 3 Geotechnical structures"
+      ],
+      "references": [
+        {
+          "target": "BS EN 1990",
+          "kind": "architecture-inference",
+          "label": "Design basis dependency",
+          "basis": "Eurocode 7 follows the common Eurocode design basis established in BS EN 1990.",
+          "sourceUrl": "https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS+EN+1997"
+        }
+      ]
+    },
+    {
+      "code": "BS EN 1998",
+      "eurocode": "Eurocode 8",
+      "material": "Seismic",
+      "standardType": "Seismic design standard",
+      "title": "Eurocode 8. Design of structures for earthquake resistance",
+      "committee": "B/525/8",
+      "seriesUrl": "https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS+EN+1998",
+      "seriesDoi": "https://doi.org/10.3403/BSEN1998",
+      "currentDocument": {
+        "code": "BS EN 1998-5:2024",
+        "title": "Eurocode 8. Design of structures for earthquake resistance. Geotechnical aspects, foundations, retaining and underground structures",
+        "published": "2024-10-09",
+        "url": "https://landingpage.bsigroup.com/LandingPage/Undated?UPI=000000000030094291"
+      },
+      "applicability": {
+        "from": "2024-10-09",
+        "to": null,
+        "note": "Applicability start is currently aligned to the public publication date in this dataset unless a separate public applicability date is known."
+      },
+      "parts": [
+        "Part 1 General rules, seismic actions and rules for buildings",
+        "Part 1-1 General rules and seismic action",
+        "Part 1-2 Buildings",
+        "Part 2 Bridges",
+        "Part 3 Assessment and retrofitting of buildings",
+        "Part 4 Silos, tanks and pipelines",
+        "Part 5 Foundations, retaining structures and geotechnical aspects",
+        "Part 6 Towers, masts and chimneys"
+      ],
+      "references": [
+        {
+          "target": "BS EN 1990",
+          "kind": "architecture-inference",
+          "label": "Design basis dependency",
+          "basis": "Eurocode 8 follows the common Eurocode design basis established in BS EN 1990.",
+          "sourceUrl": "https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS+EN+1998"
+        },
+        {
+          "target": "BS EN 1991",
+          "kind": "public-scope-link",
+          "label": "Seismic actions relationship",
+          "basis": "The Eurocode 8 series explicitly includes seismic actions in its public part titles, which links it to the actions-on-structures domain of Eurocode 1.",
+          "sourceUrl": "https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS+EN+1998"
+        },
+        {
+          "target": "BS EN 1997",
+          "kind": "public-scope-link",
+          "label": "Geotechnical relationship",
+          "basis": "Eurocode 8 Part 5 publicly covers geotechnical aspects, foundations, retaining and underground structures, creating a direct scope relationship with Eurocode 7.",
+          "sourceUrl": "https://landingpage.bsigroup.com/LandingPage/Undated?UPI=000000000030094291"
+        }
+      ]
+    },
+    {
+      "code": "BS EN 1999",
+      "eurocode": "Eurocode 9",
+      "material": "Aluminium",
+      "standardType": "Material design standard",
+      "title": "Eurocode 9. Design of aluminium structures",
+      "committee": "B/525/9",
+      "seriesUrl": "https://landingpage.bsigroup.com/LandingPage/Undated?UPI=000000000030298529",
+      "seriesDoi": "https://doi.org/10.3403/30408029U",
+      "currentDocument": {
+        "code": "BS EN 1999-1-1:2023",
+        "title": "Eurocode 9. Design of aluminium structures. General rules",
+        "published": "2023-08-25",
+        "url": "https://landingpage.bsigroup.com/LandingPage/Undated?UPI=000000000030298529"
+      },
+      "applicability": {
+        "from": "2023-08-25",
+        "to": null,
+        "note": "Applicability start is currently aligned to the public publication date in this dataset unless a separate public applicability date is known."
+      },
+      "parts": [
+        "Part 1-1 General rules",
+        "Part 1-2 Structural fire design",
+        "Part 1-3 Structures susceptible to fatigue"
+      ],
+      "references": [
+        {
+          "target": "BS EN 1990",
+          "kind": "architecture-inference",
+          "label": "Design basis dependency",
+          "basis": "Eurocode 9 follows the common Eurocode design basis established in BS EN 1990.",
+          "sourceUrl": "https://landingpage.bsigroup.com/LandingPage/Undated?UPI=000000000030298529"
+        },
+        {
+          "target": "BS EN 1991",
+          "kind": "architecture-inference",
+          "label": "Actions dependency",
+          "basis": "Aluminium design uses structural action models from Eurocode 1 as part of the wider Eurocode architecture.",
+          "sourceUrl": "https://landingpage.bsigroup.com/LandingPage/Undated?UPI=000000000030298529"
+        }
+      ]
+    }
+  ]
+}

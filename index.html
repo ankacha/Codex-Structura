@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Codex-Structura</title>
+    <style>
+      :root {
+        --bg: #eef2f7;
+        --panel: #ffffff;
+        --text: #0f172a;
+        --muted: #475569;
+        --border: #dbe3ee;
+        --series: #c2410c;
+        --scope: #2563eb;
+        --inference: #475569;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 28%),
+          radial-gradient(circle at top right, rgba(194, 65, 12, 0.08), transparent 22%),
+          var(--bg);
+      }
+
+      main {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 28px 18px 40px;
+      }
+
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+        padding: 24px;
+      }
+
+      h1, h2, h3 {
+        margin: 0 0 12px;
+      }
+
+      p {
+        margin: 0 0 14px;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 12px;
+        margin: 18px 0 24px;
+      }
+
+      .stat {
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 14px 16px;
+        background: #f8fafc;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 1.45rem;
+        color: var(--text);
+      }
+
+      .timeline-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 300px;
+        gap: 18px;
+        align-items: start;
+      }
+
+      .filters {
+        display: grid;
+        gap: 12px;
+      }
+
+      .filter {
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: #f8fafc;
+        padding: 12px;
+      }
+
+      .filter label {
+        display: block;
+        font-size: 0.84rem;
+        font-weight: 600;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .filter select,
+      .filter input {
+        width: 100%;
+        border: 1px solid #cbd5e1;
+        border-radius: 10px;
+        padding: 9px 10px;
+        font: inherit;
+        background: #ffffff;
+      }
+
+      .timeline {
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        background: linear-gradient(180deg, #ffffff, #f8fbff);
+        padding: 18px;
+      }
+
+      .timeline svg {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .legend span {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .legend i {
+        width: 26px;
+        height: 0;
+        border-top: 3px solid;
+        display: inline-block;
+      }
+
+      .legend .inference {
+        border-top-style: dashed;
+      }
+
+      .graph-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 320px;
+        gap: 18px;
+        align-items: start;
+      }
+
+      #graph {
+        width: 100%;
+        min-height: 760px;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        background: linear-gradient(180deg, #ffffff, #f8fbff);
+        overflow: hidden;
+      }
+
+      .sidebar {
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        background: #f8fafc;
+        padding: 18px;
+        min-height: 760px;
+      }
+
+      .sidebar .muted {
+        color: var(--muted);
+      }
+
+      .sidebar .meta {
+        display: grid;
+        gap: 8px;
+        margin: 14px 0 18px;
+      }
+
+      .sidebar .meta div {
+        padding: 10px 12px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: #ffffff;
+      }
+
+      .sidebar ul {
+        margin: 8px 0 0;
+        padding-left: 18px;
+      }
+
+      .note {
+        margin-top: 16px;
+        padding: 14px 16px;
+        border-radius: 12px;
+        background: #fff7ed;
+        border: 1px solid #fed7aa;
+        color: #9a3412;
+      }
+
+      .table-wrap {
+        overflow-x: auto;
+        margin-top: 24px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+      }
+
+      th, td {
+        text-align: left;
+        padding: 12px 10px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+      }
+
+      code {
+        background: #eff6ff;
+        border-radius: 6px;
+        padding: 1px 6px;
+      }
+
+      a {
+        color: #1d4ed8;
+        word-break: break-word;
+      }
+
+      .empty {
+        padding: 20px;
+        border: 1px dashed #cbd5e1;
+        border-radius: 14px;
+        color: var(--muted);
+        background: #ffffff;
+      }
+
+      .error {
+        padding: 18px;
+        color: #991b1b;
+        background: #fef2f2;
+        border: 1px solid #fecaca;
+        border-radius: 12px;
+      }
+
+      @media (max-width: 1100px) {
+        .timeline-layout,
+        .graph-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .sidebar {
+          min-height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="panel">
+        <h1>BS EN 1990 to BS EN 1999 Reference Graph</h1>
+        <p>
+          Real public BSI metadata for the Eurocode series, with a filterable timeline and a graph of public series links, public scope links, and clearly labeled architecture inferences.
+        </p>
+
+        <div class="stats" id="stats"></div>
+
+        <div class="timeline-layout">
+          <div class="timeline">
+            <h2>Timeline</h2>
+            <p>Bars show applicability windows and dots show the published dates for the currently filtered standards.</p>
+            <div id="timeline"></div>
+          </div>
+          <div class="filters">
+            <div class="filter">
+              <label for="material-filter">Material</label>
+              <select id="material-filter"></select>
+            </div>
+            <div class="filter">
+              <label for="type-filter">Type of standard</label>
+              <select id="type-filter"></select>
+            </div>
+            <div class="filter">
+              <label for="date-from">Published/applicable from</label>
+              <input id="date-from" type="date" />
+            </div>
+            <div class="filter">
+              <label for="date-to">Published/applicable to</label>
+              <input id="date-to" type="date" />
+            </div>
+          </div>
+        </div>
+
+        <div class="legend">
+          <span><i style="border-color: var(--series)"></i> Public series link</span>
+          <span><i style="border-color: var(--scope)"></i> Public scope link</span>
+          <span><i class="inference" style="border-color: var(--inference)"></i> Architecture inference</span>
+        </div>
+
+        <div class="graph-layout">
+          <div id="graph"></div>
+          <aside class="sidebar" id="sidebar">
+            <h3>Select a standard</h3>
+            <p class="muted">Click a node to view the standard title, committee, publication and applicability dates, current document, parts, and outgoing relationships.</p>
+          </aside>
+        </div>
+        <div class="note" id="note"></div>
+
+        <div class="table-wrap">
+          <h2>Standards Data</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Code</th>
+                <th>Type</th>
+                <th>Published</th>
+                <th>Applicable from</th>
+                <th>Current document</th>
+              </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+      async function loadDataset() {
+        if (location.protocol === "file:") {
+          throw new Error("This preview now loads data from bs-en-1990-1999.json, so it needs to be served over local HTTP rather than opened directly from file://.");
+        }
+
+        const response = await fetch("./bs-en-1990-1999.json");
+        if (!response.ok) {
+          throw new Error(`Could not load bs-en-1990-1999.json (${response.status}).`);
+        }
+
+        return response.json();
+      }
+
+      function buildGraph(data) {
+        const nodeByCode = new Map(
+          data.standards.map((standard) => [
+            standard.code,
+            {
+              id: standard.code,
+              title: standard.title,
+              committee: standard.committee,
+              eurocode: standard.eurocode,
+              material: standard.material,
+              standardType: standard.standardType,
+              currentDocumentCode: standard.currentDocument.code,
+              currentDocumentUrl: standard.currentDocument.url,
+              published: standard.currentDocument.published,
+              applicabilityFrom: standard.applicability?.from || standard.currentDocument.published,
+              applicabilityTo: standard.applicability?.to || null
+            }
+          ])
+        );
+
+        const links = [];
+
+        for (const standard of data.standards) {
+          for (const reference of standard.references) {
+            if (nodeByCode.has(reference.target)) {
+              links.push({
+                source: standard.code,
+                target: reference.target,
+                type: reference.kind,
+                label: reference.label,
+                basis: reference.basis,
+                sourceUrl: reference.sourceUrl
+              });
+            }
+          }
+        }
+
+        const degreeById = new Map();
+        for (const code of nodeByCode.keys()) degreeById.set(code, 0);
+        for (const link of links) {
+          degreeById.set(link.source, degreeById.get(link.source) + 1);
+          degreeById.set(link.target, degreeById.get(link.target) + 1);
+        }
+
+        const nodes = Array.from(nodeByCode.values()).map((node) => ({
+          ...node,
+          degree: degreeById.get(node.id) || 0
+        }));
+
+        return { nodes, links };
+      }
+
+      function populateFilters(dataset) {
+        const materialFilter = document.getElementById("material-filter");
+        const typeFilter = document.getElementById("type-filter");
+
+        const materials = Array.from(new Set(dataset.standards.map((d) => d.material))).sort();
+        const types = Array.from(new Set(dataset.standards.map((d) => d.standardType))).sort();
+
+        materialFilter.innerHTML = ['<option value="all">All materials</option>']
+          .concat(materials.map((value) => `<option value="${value}">${value}</option>`))
+          .join("");
+
+        typeFilter.innerHTML = ['<option value="all">All types</option>']
+          .concat(types.map((value) => `<option value="${value}">${value}</option>`))
+          .join("");
+      }
+
+      function getFilters() {
+        return {
+          material: document.getElementById("material-filter").value,
+          standardType: document.getElementById("type-filter").value,
+          from: document.getElementById("date-from").value || null,
+          to: document.getElementById("date-to").value || null
+        };
+      }
+
+      function filterStandards(standards, filters) {
+        return standards.filter((standard) => {
+          const published = standard.currentDocument.published;
+          const applicableFrom = standard.applicability?.from || published;
+          const comparable = applicableFrom || published;
+
+          if (filters.material !== "all" && standard.material !== filters.material) return false;
+          if (filters.standardType !== "all" && standard.standardType !== filters.standardType) return false;
+          if (filters.from && comparable < filters.from) return false;
+          if (filters.to && published > filters.to) return false;
+          return true;
+        });
+      }
+
+      function renderStats(dataset, graph) {
+        const stats = [
+          { label: "Series", value: graph.nodes.length },
+          { label: "Links", value: graph.links.length },
+          {
+            label: "Public links",
+            value: graph.links.filter((d) => d.type !== "architecture-inference").length
+          },
+          {
+            label: "Inferences",
+            value: graph.links.filter((d) => d.type === "architecture-inference").length
+          }
+        ];
+
+        document.getElementById("stats").innerHTML = stats
+          .map((item) => `<div class="stat"><strong>${item.value}</strong><span>${item.label}</span></div>`)
+          .join("");
+
+        document.getElementById("note").textContent = dataset.meta.referenceLimitations;
+      }
+
+      function renderTable(standards) {
+        document.getElementById("table-body").innerHTML = standards
+          .map(
+            (item) => `
+              <tr>
+                <td><code>${item.code}</code></td>
+                <td>${item.standardType}</td>
+                <td>${formatDate(item.currentDocument.published)}</td>
+                <td>${formatDate(item.applicability?.from || item.currentDocument.published)}</td>
+                <td><a href="${item.currentDocument.url}" target="_blank" rel="noreferrer">${item.currentDocument.code}</a></td>
+              </tr>
+            `
+          )
+          .join("");
+      }
+
+      function renderTimeline(standards, selectedId, onSelect) {
+        const container = document.getElementById("timeline");
+        container.innerHTML = "";
+
+        if (!standards.length) {
+          container.innerHTML = '<div class="empty">No standards match the current material/type/date filters.</div>';
+          return;
+        }
+
+        const width = Math.max(container.clientWidth || 1000, 1000);
+        const rowHeight = 34;
+        const margin = { top: 16, right: 20, bottom: 34, left: 180 };
+        const height = margin.top + margin.bottom + standards.length * rowHeight;
+
+        const dates = standards.flatMap((standard) => {
+          const published = new Date(standard.currentDocument.published);
+          const applicableFrom = new Date(standard.applicability?.from || standard.currentDocument.published);
+          const applicableTo = standard.applicability?.to ? new Date(standard.applicability.to) : new Date();
+          return [published, applicableFrom, applicableTo];
+        });
+
+        const x = d3.scaleTime().domain(d3.extent(dates)).nice().range([margin.left, width - margin.right]);
+        const y = d3.scaleBand().domain(standards.map((d) => d.code)).range([margin.top, height - margin.bottom]).padding(0.28);
+
+        const svg = d3
+          .select(container)
+          .append("svg")
+          .attr("viewBox", [0, 0, width, height]);
+
+        svg
+          .append("g")
+          .attr("transform", `translate(0,${height - margin.bottom})`)
+          .call(d3.axisBottom(x).ticks(Math.min(8, standards.length + 2)).tickSizeOuter(0));
+
+        svg
+          .append("g")
+          .attr("transform", `translate(${margin.left},0)`)
+          .call(d3.axisLeft(y).tickSize(0))
+          .call((g) => g.select(".domain").remove());
+
+        svg
+          .append("g")
+          .selectAll("line")
+          .data(standards)
+          .join("line")
+          .attr("x1", (d) => x(new Date(d.applicability?.from || d.currentDocument.published)))
+          .attr("x2", (d) => x(d.applicability?.to ? new Date(d.applicability.to) : new Date()))
+          .attr("y1", (d) => y(d.code) + y.bandwidth() / 2)
+          .attr("y2", (d) => y(d.code) + y.bandwidth() / 2)
+          .attr("stroke", (d) => (d.code === selectedId ? "#1d4ed8" : "#94a3b8"))
+          .attr("stroke-width", (d) => (d.code === selectedId ? 10 : 8))
+          .attr("stroke-linecap", "round")
+          .style("cursor", "pointer")
+          .on("click", (event, d) => onSelect(d.code));
+
+        svg
+          .append("g")
+          .selectAll("circle")
+          .data(standards)
+          .join("circle")
+          .attr("cx", (d) => x(new Date(d.currentDocument.published)))
+          .attr("cy", (d) => y(d.code) + y.bandwidth() / 2)
+          .attr("r", (d) => (d.code === selectedId ? 7 : 5))
+          .attr("fill", (d) => (d.code === selectedId ? "#c2410c" : "#1d4ed8"))
+          .style("cursor", "pointer")
+          .on("click", (event, d) => onSelect(d.code));
+
+        svg
+          .append("g")
+          .selectAll("rect")
+          .data(standards)
+          .join("rect")
+          .attr("x", 0)
+          .attr("y", (d) => y(d.code))
+          .attr("width", width)
+          .attr("height", y.bandwidth())
+          .attr("fill", (d) => (d.code === selectedId ? "rgba(37, 99, 235, 0.08)" : "transparent"))
+          .lower()
+          .style("cursor", "pointer")
+          .on("click", (event, d) => onSelect(d.code));
+
+        svg
+          .append("g")
+          .selectAll("text.pub")
+          .data(standards)
+          .join("text")
+          .attr("x", (d) => x(new Date(d.currentDocument.published)) + 8)
+          .attr("y", (d) => y(d.code) + y.bandwidth() / 2 + 4)
+          .attr("font-size", 10)
+          .attr("fill", "#475569")
+          .text((d) => formatDate(d.currentDocument.published, true));
+      }
+
+      function renderSidebar(standard, graph) {
+        const sidebar = document.getElementById("sidebar");
+        if (!standard) {
+          sidebar.innerHTML = '<h3>Select a standard</h3><p class="muted">Click a node to view the standard title, committee, publication and applicability dates, current document, parts, and outgoing relationships.</p>';
+          return;
+        }
+
+        const outgoing = graph.links.filter((link) => (link.source.id ? link.source.id === standard.code : link.source === standard.code));
+
+        sidebar.innerHTML = `
+          <h3>${standard.code}</h3>
+          <p>${standard.title}</p>
+          <div class="meta">
+            <div><strong>Material</strong><br>${standard.material}</div>
+            <div><strong>Type</strong><br>${standard.standardType}</div>
+            <div><strong>Committee</strong><br>${standard.committee}</div>
+            <div><strong>Published</strong><br>${formatDate(standard.currentDocument.published)}</div>
+            <div><strong>Applicable from</strong><br>${formatDate(standard.applicability?.from || standard.currentDocument.published)}</div>
+            <div><strong>Current document</strong><br><a href="${standard.currentDocument.url}" target="_blank" rel="noreferrer">${standard.currentDocument.code}</a></div>
+          </div>
+          <h3>Parts</h3>
+          <ul>
+            ${standard.parts.map((part) => `<li>${part}</li>`).join("")}
+          </ul>
+          <h3 style="margin-top:16px;">Outgoing relationships</h3>
+          <ul>
+            ${outgoing.length ? outgoing.map((link) => `<li><strong>${link.label}</strong> to ${typeof link.target === "string" ? link.target : link.target.id}<br><span class="muted">${link.basis}</span></li>`).join("") : "<li>No outgoing relationships recorded.</li>"}
+          </ul>
+        `;
+      }
+
+      function renderGraph(standards, graph, selectedId, onSelect) {
+        const container = document.getElementById("graph");
+        container.innerHTML = "";
+
+        if (!graph.nodes.length) {
+          container.innerHTML = '<div class="empty">No graph nodes are available for the current filter selection.</div>';
+          return;
+        }
+
+        const width = Math.max(container.clientWidth || 1000, 1100);
+        const height = 760;
+        const color = {
+          "public-series-link": "#c2410c",
+          "public-scope-link": "#2563eb",
+          "architecture-inference": "#475569"
+        };
+
+        const svg = d3
+          .select(container)
+          .append("svg")
+          .attr("viewBox", [-width / 2, -height / 2, width, height])
+          .style("width", "100%")
+          .style("height", "760px")
+          .style("display", "block");
+
+        svg
+          .append("defs")
+          .selectAll("marker")
+          .data(["public-series-link", "public-scope-link", "architecture-inference"])
+          .enter()
+          .append("marker")
+          .attr("id", (d) => `arrow-${d}`)
+          .attr("viewBox", "0 -5 10 10")
+          .attr("refX", 20)
+          .attr("refY", 0)
+          .attr("markerWidth", 6)
+          .attr("markerHeight", 6)
+          .attr("orient", "auto")
+          .append("path")
+          .attr("fill", (d) => color[d])
+          .attr("d", "M0,-5L10,0L0,5");
+
+        const nodes = graph.nodes.map((d) => ({ ...d, boxWidth: 220, boxHeight: 64 }));
+        const links = graph.links.map((d) => ({ ...d }));
+
+        const simulation = d3
+          .forceSimulation(nodes)
+          .force(
+            "link",
+            d3.forceLink(links).id((d) => d.id).distance((d) => (d.type === "public-series-link" ? 210 : d.type === "public-scope-link" ? 250 : 290)).strength(0.55)
+          )
+          .force("charge", d3.forceManyBody().strength(-1400))
+          .force("center", d3.forceCenter(0, 0))
+          .force("x", d3.forceX((d, i) => -width / 2 + 140 + (i * (width - 280)) / Math.max(nodes.length - 1, 1)).strength(0.18))
+          .force("y", d3.forceY(0).strength(0.06))
+          .force("collide", d3.forceCollide().radius((d) => Math.max(d.boxWidth / 2, d.boxHeight / 2) + 26));
+
+        const link = svg
+          .append("g")
+          .attr("stroke-opacity", 0.85)
+          .selectAll("line")
+          .data(links)
+          .enter()
+          .append("line")
+          .attr("stroke", (d) => color[d.type])
+          .attr("stroke-width", (d) => (d.type === "public-series-link" ? 2.8 : 1.9))
+          .attr("stroke-dasharray", (d) => (d.type === "architecture-inference" ? "5,4" : null))
+          .attr("marker-end", (d) => `url(#arrow-${d.type})`);
+
+        const node = svg
+          .append("g")
+          .selectAll("g")
+          .data(nodes)
+          .enter()
+          .append("g")
+          .style("cursor", "pointer")
+          .call(
+            d3
+              .drag()
+              .on("drag", (event, d) => {
+                d.x = event.x;
+                d.y = event.y;
+                d.fx = event.x;
+                d.fy = event.y;
+                renderPositions();
+              })
+              .on("end", (event, d) => {
+                d.fx = event.x;
+                d.fy = event.y;
+              })
+          )
+          .on("click", (event, d) => onSelect(d.id));
+
+        node
+          .append("rect")
+          .attr("x", (d) => -d.boxWidth / 2)
+          .attr("y", (d) => -d.boxHeight / 2)
+          .attr("rx", 14)
+          .attr("width", (d) => d.boxWidth)
+          .attr("height", (d) => d.boxHeight)
+          .attr("fill", "#ffffff")
+          .attr("stroke", (d) => (d.id === selectedId ? "#1d4ed8" : "#0f172a"))
+          .attr("stroke-width", (d) => (d.id === selectedId ? 3 : 1.8));
+
+        node
+          .append("text")
+          .attr("text-anchor", "middle")
+          .attr("fill", "#0f172a")
+          .each(function(d) {
+            const text = d3.select(this);
+            text.append("tspan").attr("x", 0).attr("y", -8).attr("font-size", 12).attr("font-weight", 700).text(d.id);
+            text.append("tspan").attr("x", 0).attr("y", 12).attr("font-size", 11).attr("fill", "#475569").text(shortenTitle(d.title, 34));
+          });
+
+        simulation.stop();
+        for (let i = 0; i < 300; i += 1) simulation.tick();
+        for (const node of nodes) {
+          node.fx = node.x;
+          node.fy = node.y;
+        }
+
+        renderPositions();
+
+        function renderPositions() {
+          link
+            .attr("x1", (d) => d.source.x)
+            .attr("y1", (d) => d.source.y)
+            .attr("x2", (d) => d.target.x)
+            .attr("y2", (d) => d.target.y);
+
+          node.attr("transform", (d) => `translate(${d.x},${d.y})`);
+        }
+      }
+
+      function deriveFilteredGraph(standards, fullGraph) {
+        const allowed = new Set(standards.map((d) => d.code));
+        return {
+          nodes: fullGraph.nodes.filter((node) => allowed.has(node.id)),
+          links: fullGraph.links.filter((link) => {
+            const source = link.source.id || link.source;
+            const target = link.target.id || link.target;
+            return allowed.has(source) && allowed.has(target);
+          })
+        };
+      }
+
+      function formatDate(value, compact = false) {
+        if (!value) return "Open-ended";
+        const options = compact
+          ? { year: "numeric", month: "short" }
+          : { year: "numeric", month: "short", day: "2-digit" };
+        return new Intl.DateTimeFormat("en-GB", options).format(new Date(value));
+      }
+
+      function shortenTitle(title, maxLength) {
+        return title.length > maxLength ? `${title.slice(0, maxLength - 1)}...` : title;
+      }
+
+      async function init() {
+        if (!window.d3) {
+          throw new Error("D3 did not load. If you are offline, the CDN script cannot be reached.");
+        }
+
+        const dataset = await loadDataset();
+        const fullGraph = buildGraph(dataset);
+        let selectedId = null;
+
+        populateFilters(dataset);
+
+        function renderAll() {
+          const filters = getFilters();
+          const filteredStandards = filterStandards(dataset.standards, filters);
+          const filteredGraph = deriveFilteredGraph(filteredStandards, fullGraph);
+          const selectedStandard = filteredStandards.find((d) => d.code === selectedId) || null;
+
+          renderStats(dataset, filteredGraph);
+          renderTimeline(filteredStandards, selectedId, (code) => {
+            selectedId = code;
+            renderAll();
+          });
+          renderTable(filteredStandards);
+          renderGraph(filteredStandards, filteredGraph, selectedId, (code) => {
+            selectedId = code;
+            renderAll();
+          });
+          renderSidebar(selectedStandard, filteredGraph);
+        }
+
+        for (const id of ["material-filter", "type-filter", "date-from", "date-to"]) {
+          document.getElementById(id).addEventListener("input", renderAll);
+          document.getElementById(id).addEventListener("change", renderAll);
+        }
+
+        renderAll();
+      }
+
+      init().catch((error) => {
+        document.querySelector(".panel").innerHTML = `<div class="error">${error.message}</div>`;
+      });
+    </script>
+  </body>
+</html>
